@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'img/header_modified.jpg' %}">
+    <link rel="stylesheet" href="{% static 'img/book.jpg' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <head/>
+    <body>
+ 
+
+    <header>
+        <style>
+            body {
+                margin-top: 10px;
+            }
+            
+            /* Height for devices larger than 576px */
+            @media (min-width: 992px) {
+                #intro {
+                    margin-top: -58.59px;
+                }
+            }
+
+            .navbar .nav-link {
+                color: #fff !important;
+            }
+        </style>
+
+        <!-- Navbar -->
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark d-none d-lg-block bg-dark" style="z-index: 2000;">
+            <div class="container-fluid">
+                <!-- Navbar brand -->
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarExample01">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+
+
+                        <li class="nav-item">
+                            <a class="nav-link me-5" href="/ ">
+                                Home Page</a>
+                        </li>
+                    </ul>
+                        <ul class="navbar-nav d-flex flex-row">
+                        <!-- Icons -->
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link" href="https://www.linkedin.com/in/akram-odeh-a46877316/"
+                                rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-linkedin me-3"   viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                                </svg>
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link" href="https://www.facebook.com/abochloe" rel="nofollow"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-facebook me-3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                                </svg>
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link" href="https://github.com/Akram0d" rel="nofollow"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-github me-5" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                                </svg>
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </nav>
+        <!-- Navbar -->
+        
+<section class="articles">
+  <article>
+    <div class="article-wrapper">
+      <figure>
+        <img src="/static/media/workP.png" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Worker Service</h2>
+        <p>A django-constructed web platform that enables users to register and log in, offering dual functionality: individuals can provide services in specialized fields like plumbing or electrical work, while others can search for services and access workers' contact information for quick and easy connection
+     </p>
+        <a href="#" class="read-more">
+          GitHub <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </article>
+  <article>
+
+    <div class="article-wrapper">
+      <figure>
+        <img src="/static/media/port.png" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Portfolio</h2>
+        <p>
+It showcases an introduction about myself, my skills, educational background, and a selection of my best projects. The website serves as a professional representation of my work and expertise        </p>
+        <a href="#" class="read-more">
+          GitHub <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </article>
+  <article>
+
+    <div class="article-wrapper">
+      <figure>
+        <img src="/static/media/school DB.png" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>School Database</h2>
+        <p>
+This school database application was made using Java Swing, it allows for storing student information and grades, The system enables adding and removing students, searching for student records, modifying grades, and importing/exporting data files for easy management and transfer of information        <a href="#" class="read-more">
+            GitHub <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="articles">
+  <article>
+    <div class="article-wrapper">
+      <figure>
+        <img src="/static/media/tasks.png" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Task Manager</h2>
+        <p>
+It uses a simple interface to add and store tasks as blocks in the database and then it gives the ability to delete them after being done        </p>
+        <a href="#" class="read-more">
+          GitHub <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </article>
+  <article>
+
+    <div class="article-wrapper">
+      <figure>
+        <img src="/static/media/udacity.png" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Dog Image Classifier</h2>
+        <p>
+This dog image classifier was made as part of the AI Programming with Python and TensorFlow Nanodegree program.</p>
+      <p>The project involved determining the best image classification algorithm to classify images as 'dogs' or 'not dogs,' evaluating the algorithm's accuracy in identifying dog breeds, and timing the runtime of each algorithm to balance accuracy and computational efficiency        </p>
+        <a href="#" class="read-more">
+          GitHub <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </article>
+  <article>
+
+    <div class="article-wrapper">
+      <figure>
+        <img src="/static/media/android.png" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>Numeric Systems Converter</h2>
+        <p>
+This Android application was developed using Java in Android Studio, it enables users to convert numbers between four different numeric systems, providing a user-friendly interface for efficient conversions across various formats         <a href="#" class="read-more">
+          GitHub <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </article>
+</section>
+
+    </header>
+<body/>
+    <style>
+
+        section{
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 80px;
+
+           background-color: blanchedalmond;
+        }
+
+article {
+  --img-scale: 1.001;
+  --title-color: black;
+  --link-icon-translate: -20px;
+  --link-icon-opacity: 0;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: none;
+  background: #fff;
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+article a::after {
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+  cursor: pointer;
+  content: "";
+}
+
+/* basic article elements styling */
+article h2 {
+  margin: 0 0 18px 0;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.9rem;
+  letter-spacing: 0.06em;
+  color: var(--title-color);
+  transition: color 0.3s ease-out;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+article img {
+  max-width: 100%;
+  transform-origin: center;
+  transform: scale(var(--img-scale));
+  transition: transform 0.4s ease-in-out;
+}
+
+.article-body {
+  padding: 24px;
+}
+
+article a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #28666e;
+}
+
+article a:focus {
+  outline: 1px dotted #28666e;
+}
+
+article a .icon {
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  transform: translateX(var(--link-icon-translate));
+  opacity: var(--link-icon-opacity);
+  transition: all 0.3s;
+}
+
+article:has(:hover, :focus) {
+  --img-scale: 1.1;
+  --title-color: #28666e;
+  --link-icon-translate: 0;
+  --link-icon-opacity: 1;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 48px 0;
+  font-family: "Figtree", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  background-image: linear-gradient(45deg, #7c9885, #b5b682);
+  min-height: 100vh;
+}
+
+.articles {
+  display: grid;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+@media screen and (max-width: 960px) {
+  article {
+    container: card/inline-size;
+  }
+  .article-body p {
+    display: none;
+  }
+}
+
+@container card (min-width: 380px) {
+  .article-wrapper {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+  }
+  .article-body {
+    padding-left: 0;
+  }
+  figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  figure img {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+    </style>
+
+    <!-- sript-for-icond -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
