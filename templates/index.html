@@ -434,7 +434,7 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="#about">Akram Odeh</a>
+            <a class="navbar-brand" href="#about">Home</a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -487,7 +487,7 @@
                 </a>
             </div>
             <div class="hero-image">
-<img src="{% static 'media/meee.jpg' %}" alt="Akram Mohammad Odeh" class="profile-img">
+<img src="{% static 'media/me.jpg' %}" alt="Akram Mohammad Odeh" class="profile-img">
                 <div class="floating-icon icon-1">
                     <i class="fas fa-code" style="color: var(--primary-color);"></i>
                 </div>
@@ -503,128 +503,150 @@
         <div class="container">
             <div class="section-title">
                 <h2>Skills & Expertise</h2>
-                <p>A comprehensive overview of my technical skills and programming languages</p>
+                <p>A comprehensive summery of my technical, soft skills, and programming languages</p>
             </div>
             
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>C++</h3>
-                    <p>2+ years of experience with data structures, OOP, and parallel programming. Covered major concepts in my department.</p>
-                    <div class="skill-badge">Visual Studio, VS Code</div>
-                </div>
+          <div class="skills-grid">
+    <!-- Python & AI -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fab fa-python"></i>
+        </div>
+        <h3>Python & AI</h3>
+        <p>Strong experience with Python and its frameworks, including Django for web development and TensorFlow for machine learning projects.</p>
+        <div class="skill-badge">Django, TensorFlow, Restful-APIs, Pandas, NumPy</div>
+    </div>
 
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h3>Python</h3>
-                    <p>Experienced with Django, TensorFlow, Pandas, NumPy, and GDAL for various development projects.</p>
-                    <div class="skill-badge">PyCharm, Jupyter, Colab</div>
-                </div>
+    <!-- Web Development -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-globe"></i>
+        </div>
+        <h3>Web Development</h3>
+        <p>Proficient in Angular, TypeScript, and web fundamentals (HTML, CSS, JS). Familiar with RxJS, Ajax, and responsive UI/UX practices.</p>
+        <div class="skill-badge">Angular, TypeScript, RxJS, Bootstrap, Tailwind</div>
+    </div>
 
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-java"></i>
-                    </div>
-                    <h3>Java</h3>
-                    <p>Covered concepts like Data Structure, OOP, and Android app design. Completed projects using Swing toolkit.</p>
-                    <div class="skill-badge">NetBeans, Android Studio</div>
-                </div>
+    <!-- Java & Backend -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fab fa-java"></i>
+        </div>
+        <h3>Java & Backend</h3>
+        <p>Experience with Java for backend applications, object-oriented programming, and frameworks such as Spring Boot and Hibernate.</p>
+        <div class="skill-badge">Java, Spring Boot, Restful-APIs</div>
+    </div>
 
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Proficient in HTML, CSS, JavaScript, Bootstrap, Ajax, jQuery, and modern web technologies.</p>
-                    <div class="skill-badge">Modern Web Stack</div>
-                </div>
+    <!-- Databases -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-database"></i>
+        </div>
+        <h3>Databases</h3>
+        <p>Knowledge of SQL and database design, with experience using PostGIS and Supabase in development projects.</p>
+        <div class="skill-badge">SQL, PostGIS, Supabase</div>
+    </div>
 
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Other Technologies</h3>
-                    <p>Experience with Assembly (x86 and MIPS), SQL, PostGIS, and version control with Git.</p>
-                    <div class="skill-badge">Various Tools</div>
-                </div>
+    <!-- Tools & Collaboration -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-tools"></i>
+        </div>
+        <h3>Tools & Collaboration</h3>
+        <p>Hands-on experience with Git for version control, Postman for API testing, and Figma for UI/UX design.</p>
+        <div class="skill-badge">Git, Postman, Figma</div>
+    </div>
 
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Soft Skills</h3>
-                    <p>Multilingual (Arabic native, English fluent, Spanish basic), problem-solving, communication, and fast learning abilities.</p>
-                    <div class="skill-badge">Leadership & Teamwork</div>
-                </div>
-            </div>
+    <!-- Other Programming -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-code"></i>
+        </div>
+        <h3>Other Programming Languages</h3>
+        <p>Worked with C and C++ for data structures and algorithms, as well as low-level programming in Assembly (x86/MIPS).</p>
+        <div class="skill-badge">C, C++, Assembly</div>
+    </div>
+
+    <!-- Soft Skills -->
+    <div class="skill-card">
+        <div class="skill-icon">
+            <i class="fas fa-users"></i>
+        </div>
+        <h3>Soft Skills</h3>
+        <p>Problem-solving mindset, Great communication skills, and adaptability under pressure. Fast learner and team player with multilingual abilities.</p>
+        <div class="skill-badge">Native Arabic, Fluent English</div>
+    </div>
+</div>
+
         </div>
     </section>
 
-    <!-- Education Timeline -->
-    <section id="education" class="education-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Education Timeline</h2>
-                <p>My academic journey and professional development</p>
+   <!-- Education Timeline -->
+<section id="education" class="education-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Education Timeline</h2>
+            <p>My academic journey and professional development</p>
+        </div>
+        
+        <div class="timeline">
+            <!-- English Access Program -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2016-2018</div>
+                    <h3>English Access Micro Scholarship Program</h3>
+                    <div class="institution">American Consulate Program</div>
+                    <div class="location">2-year English development scholarship. Scored 9 at the IELTS test.<br>Qalqilya, Palestine</div>
+                </div>
+                <div class="timeline-dot"></div>
             </div>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2017-2020</div>
-                        <h3>High School</h3>
-                        <div class="institution">Kafr Thulth Secondary Boys School</div>
-                        <div class="location">Qalqilya, Palestine</div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2016-2018</div>
-                        <h3>English Access Micro Scholarship Program</h3>
-                        <div class="institution">American Consulate Program</div>
-                        <div class="location">2-year English development scholarship. Scored 9 at the IELTS test.</div>
-                    </div>
-                    <div class="timeline-dot"></div>
+            <!-- Kotlin Course -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2018-2019</div>
+                    <h3>Kotlin Programming Course</h3>
+                    <div class="institution">Palestinian Ministry of Education</div>
+                    <div class="location">5-month intensive Kotlin programming course with completed projects.</div>
                 </div>
+                <div class="timeline-dot"></div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2018-2019</div>
-                        <h3>Kotlin Programming Course</h3>
-                        <div class="institution">Palestinian Ministry of Education</div>
-                        <div class="location">5-month intensive Kotlin programming course with completed projects.</div>
-                    </div>
-                    <div class="timeline-dot"></div>
+            <!-- High School -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2017-2020</div>
+                    <h3>High School</h3>
+                    <div class="institution">Kafr Thulth Secondary Boys School</div>
+                    <div class="location">Qalqilya, Palestine</div>
                 </div>
+                <div class="timeline-dot"></div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2021-2024</div>
-                        <h3>BA in Computer Science</h3>
-                        <div class="institution">An-Najah National University</div>
-                        <div class="location">Nablus, Palestine</div>
-                    </div>
-                    <div class="timeline-dot"></div>
+            <!-- University -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2021-2024</div>
+                    <h3>BA in Computer Science</h3>
+                    <div class="institution">An-Najah National University</div>
+                    <div class="location">Nablus, Palestine</div>
                 </div>
+                <div class="timeline-dot"></div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2021-Present</div>
-                        <h3>AI Programming with Python and TensorFlow Nanodegree</h3>
-                        <div class="institution">Sponsored by Palestine Launchpad and Google</div>
-                        <div class="location">Currently enrolled, working on advanced AI and machine learning projects.</div>
-                    </div>
-                    <div class="timeline-dot"></div>
+            <!-- AI Nanodegree -->
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">2025</div>
+                    <h3>AI Programming with Python and TensorFlow Nanodegree</h3>
+                    <div class="institution">Sponsored by Palestine Launchpad and Google</div>
+                    <div class="location">Worked on advanced AI and machine learning projects and successfully completed them.<br>Online</div>
                 </div>
+                <div class="timeline-dot"></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
