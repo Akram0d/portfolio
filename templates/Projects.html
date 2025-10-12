@@ -364,6 +364,94 @@
             font-weight: 500;
         }
 
+        /* Video Modal Styles */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .video-modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 900px;
+            background: #111;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .video-modal.active .video-modal-content {
+            transform: scale(1);
+        }
+
+        .video-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .video-modal-title {
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .video-modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.2s ease;
+        }
+
+        .video-modal-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            outline: none;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero-section h1 {
@@ -385,6 +473,10 @@
 
             .section-title h2 {
                 font-size: 2rem;
+            }
+            
+            .video-modal-content {
+                width: 95%;
             }
         }
 
@@ -499,10 +591,11 @@
                         A full-stack web platform connecting job candidates with recruiters. Built with Django (backend) and Angular (frontend). Features include user authentication, resource sharing, AI-powered training modules, responsive UI, and an efficient system for matching candidates with opportunities.
                     </p>
                     <div class="project-links">
-                        <a href="#" class="project-link">
-                            <i class="fab fa-github"></i>
-                            View demo <!-- TODO: Add GitHub link -->
+                        <a href="#" class="project-link" onclick="openVideoModal('{% static 'media/demo.mp4' %}', 'GeeksHub Demo')">
+                            <i class="fas fa-play"></i>
+                            View Demo
                         </a>
+
                         <!--
                         <a href="#" class="project-link secondary">
                             <i class="fas fa-external-link-alt"></i>
@@ -644,6 +737,23 @@
     </div>
 </section>
 
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <div class="video-modal-header">
+                <div class="video-modal-title" id="videoModalTitle">Project Demo</div>
+                <button class="video-modal-close" id="videoModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="video-container">
+                <video id="demoVideo" controls>
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
@@ -689,7 +799,64 @@
 
             $(window).on('scroll resize', animateOnScroll);
             animateOnScroll(); // Initial check
+            
+            // Video modal functionality
+            const videoModal = document.getElementById('videoModal');
+            const videoModalClose = document.getElementById('videoModalClose');
+            const demoVideo = document.getElementById('demoVideo');
+            const videoModalTitle = document.getElementById('videoModalTitle');
+            
+            // Close modal when clicking the close button
+            videoModalClose.addEventListener('click', function() {
+                closeVideoModal();
+            });
+            
+            // Close modal when clicking outside the video
+            videoModal.addEventListener('click', function(e) {
+                if (e.target === videoModal) {
+                    closeVideoModal();
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                    closeVideoModal();
+                }
+            });
         });
+        
+        // Function to open the video modal
+        function openVideoModal(videoSrc, title) {
+            const videoModal = document.getElementById('videoModal');
+            const demoVideo = document.getElementById('demoVideo');
+            const videoModalTitle = document.getElementById('videoModalTitle');
+            
+            // Set video source and title
+            demoVideo.src = videoSrc;
+            videoModalTitle.textContent = title || 'Project Demo';
+            
+            // Show modal
+            videoModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            
+            // Play video when modal opens
+            demoVideo.play();
+        }
+        
+        // Function to close the video modal
+        function closeVideoModal() {
+            const videoModal = document.getElementById('videoModal');
+            const demoVideo = document.getElementById('demoVideo');
+            
+            // Hide modal
+            videoModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+            
+            // Pause video and reset it
+            demoVideo.pause();
+            demoVideo.currentTime = 0;
+        }
     </script>
 </body>
 
