@@ -1,0 +1,56 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ profile.full_name }}, software engineer{% endblock %}</title>
+  <meta name="description" content="{% block description %}{{ profile.full_name }} is a software engineer working on AI tools and backend systems. See his experience, skills, and projects.{% endblock %}">
+  <meta property="og:title" content="{{ profile.full_name }}">
+  <meta property="og:description" content="{{ profile.title }}">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231F7A4D'/%3E%3Cpath d='M16 6l7 20h-3l-1.5-4.5h-5L12 26H9z M15 19h3.600L16.800 12.500z' fill='white'/%3E%3C/svg%3E">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="{% url 'home' %}">{{ profile.name }}</a>
+      <nav class="nav" aria-label="Main">
+        <a href="{% url 'home' %}#experience">Experience</a>
+        <a href="{% url 'home' %}#skills">Skills</a>
+        <a href="{% url 'home' %}#education">Education</a>
+        <a href="{% url 'projects' %}" {% if request.resolver_match.url_name == 'projects' %}aria-current="page"{% endif %}>Projects</a>
+        <a href="{% url 'home' %}#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+        <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">{% block content %}{% endblock %}</main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>{{ profile.full_name }}, {{ profile.location }}</p>
+      <p class="muted">Built with Django.</p>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}" defer></script>
+</body>
+</html>
